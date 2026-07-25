@@ -234,7 +234,11 @@ html {
 
     /* 导航栏样式适配 */
     .enable-card-border #navbar > div:not(.absolute) {
-        @apply transition-all duration-300 border-2;
+        @apply transition-all duration-300;
+	border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 2px solid var(--line-divider) !important;
         border-color: var(--line-divider) !important;
     }
 
