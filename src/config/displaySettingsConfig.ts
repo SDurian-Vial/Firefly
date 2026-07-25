@@ -15,10 +15,10 @@ export const displaySettingsConfig: DisplaySettingsConfig = {
 	layoutSwitchable: true,
 
 	// 卡片边框和阴影开关
-	cardBorderSwitchable: true,
+	cardBorderSwitchable: false,
 
 	// 卡片风格跟随主题色开关
-	cardFollowThemeSwitchable: true,
+	cardFollowThemeSwitchable: false,
 
 	// ── 壁纸 (Wallpaper) ──────────────────────────────────
 
@@ -48,5 +48,5 @@ export const displaySettingsConfig: DisplaySettingsConfig = {
 	// ── 特效 (Effects) ────────────────────────────────────
 
 	// 樱花特效开关
-	sakuraSwitchable: true,
+	sakuraSwitchable: false,
 };

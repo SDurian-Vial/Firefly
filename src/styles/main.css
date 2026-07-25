@@ -223,18 +223,18 @@ html {
 
     /* 开启边框和阴影效果时的样式 */
     .enable-card-border .card-base {
-        @apply transition-all duration-300 border border-(--line-divider) shadow-xs;
+        @apply transition-all duration-300 border-2 border-(--line-divider);
     }
     .enable-card-border .card-base-transparent {
-        @apply transition-all duration-300 border border-(--line-divider) shadow-xs;
+        @apply transition-all duration-300 border-2 border-(--line-divider);
     }
     .enable-card-border .btn-card {
-        @apply transition-all duration-300 border border-(--line-divider) shadow-xs;
+        @apply transition-all duration-300 border-2 border-(--line-divider);
     }
 
     /* 导航栏样式适配 */
     .enable-card-border #navbar > div:not(.absolute) {
-        @apply transition-all duration-300 border shadow-xs;
+        @apply transition-all duration-300 border-2;
         border-color: var(--line-divider) !important;
     }
 

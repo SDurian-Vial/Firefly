@@ -34,7 +34,7 @@
  * ============================================ */
 #navbar>div {
     background-color: var(--card-bg);
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 0 0 0.75rem 0.75rem;
     backdrop-filter: blur(0);
     @apply navbar-surface-transition;
