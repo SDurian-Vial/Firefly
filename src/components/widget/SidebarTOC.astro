@@ -84,6 +84,9 @@ const items = encrypted ? [] : computeTocItems(headings, { maxLevel: 3 });
 	max-height: calc(100vh - 25rem)
 	/* 滚动条与内容之间的小间隙（从共享样式挪入，避免影响浮动目录的对称内边距） */
 	padding-right: 0.125rem
+
+	@media (max-height: 640px)
+		max-height: calc(100vh - 10rem)
 </style>
 
 <script>
