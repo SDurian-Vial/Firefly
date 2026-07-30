@@ -2,7 +2,7 @@
 title: Firefox 网页全窗口显示
 published: 2026-07-30
 description: "通过检测书签栏状态来控制标签栏与工具栏的显示。"
-image: "./cover.avif"
+image: "./cover.png"
 tags: ["firefox", "美化", "教程"]
 category: firefox美化
 slug: fx-full-window
@@ -10,7 +10,8 @@ slug: fx-full-window
 
 
 
-
+本篇实现了使用快捷键**随时切换**火狐浏览器网页全窗口显示的功能  
+也解决了以全窗口状态打开火狐浏览器，在地址栏输入时**地址栏的偏移问题**
 ### 🔧 第一步：启用 CSS 自定义功能
 1. 在 Firefox 地址栏输入 **`about:config`** 并回车。
 2. 如果出现安全提醒，点击“**接受风险并继续**”。
@@ -20,6 +21,7 @@ slug: fx-full-window
 
 ### 📁 第二步：创建 CSS 配置文件
 1. **找到配置文件夹**：在地址栏输入 **`about:support`** 并回车。点击“**配置文件文件夹**”右侧的“**打开文件夹**”按钮。
+   ![](./2.png)
 2. **创建 `chrome` 文件夹**：在打开的文件夹里，**新建一个文件夹**，并将其命名为 **`chrome`**（注意：全部小写）。
 3. **创建 CSS 文件**：进入 `chrome` 文件夹，在里面新建一个纯文本文件（例如 `.txt` 文件），然后将其**完整地重命名**为 **`userChrome.css`**（注意：文件扩展名必须是 `.css` 而不是 `.txt`）。
 
