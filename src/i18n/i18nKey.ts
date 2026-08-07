@@ -379,9 +379,7 @@ enum I18nKey {
 
 	// 节气组件
 	solarTerm = "solarTerm",
-	solarTermCurrent = "solarTermCurrent",
-	solarTermNext = "solarTermNext",
-	solarTermDays = "solarTermDays",
+	solarTermDaysCount = "solarTermDaysCount",
 
 	shareArticle = "shareArticle",
 	generatingPoster = "generatingPoster",

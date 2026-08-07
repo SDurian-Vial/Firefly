@@ -17,6 +17,18 @@ function refresh() {
 	info = getSolarTermInfo(new Date());
 }
 
+// 跨年份的节气显示带年份，如 "2027年1月5日"
+function formatDate(term: {
+	year: number;
+	month: number;
+	day: number;
+}): string {
+	if (term.year === new Date().getFullYear()) {
+		return `${term.month}月${term.day}日`;
+	}
+	return `${term.year}年${term.month}月${term.day}日`;
+}
+
 let timer: ReturnType<typeof setInterval>;
 
 onMount(() => {
@@ -28,30 +40,33 @@ onMount(() => {
 </script>
 
 <div class="flex flex-col gap-2">
-	<div class="flex items-baseline justify-between">
-		<span class="text-sm text-neutral-500 dark:text-neutral-400">
-			{i18n(I18nKey.solarTermCurrent)}
+	<div class="flex flex-col items-center gap-1 py-1">
+		<span class="text-3xl font-bold leading-none text-(--primary)">
+			{info.current.name}
 		</span>
-		<div class="flex items-baseline gap-1.5">
-			<span class="text-xl font-bold leading-none text-(--primary)">
-				{info.current.name}
+		<span class="text-xs text-neutral-500 dark:text-neutral-400">
+			{formatDate(info.current)}
+		</span>
+	</div>
+	{#each info.upcoming as term (term.name)}
+		<div
+			class="flex items-center justify-between gap-2 rounded-lg px-3 py-1.5
+				bg-(--btn-plain-bg-hover)"
+		>
+			<span
+				class="flex items-baseline gap-1.5 text-sm font-medium text-neutral-900 dark:text-neutral-100"
+			>
+				<span>{term.name}</span>
+				<span class="text-xs text-neutral-500 dark:text-neutral-400">
+					{formatDate(term)}
+				</span>
 			</span>
-			<span class="text-xs text-neutral-500 dark:text-neutral-400">
-				{info.current.month}月{info.current.day}日
+			<span class="shrink-0 text-sm font-medium text-(--primary)">
+				{i18n(I18nKey.solarTermDaysCount).replace(
+					"{days}",
+					String(term.daysUntil),
+				)}
 			</span>
 		</div>
-	</div>
-	<div
-		class="flex items-center justify-between gap-2 rounded-lg px-3 py-2
-			bg-(--btn-plain-bg-hover)"
-	>
-		<span class="text-sm text-neutral-600 dark:text-neutral-300">
-			{i18n(I18nKey.solarTermNext)}
-		</span>
-		<span class="text-sm font-medium text-neutral-900 dark:text-neutral-100">
-			{i18n(I18nKey.solarTermDays)
-				.replace("{name}", info.next.name)
-				.replace("{days}", String(info.daysUntil))}
-		</span>
-	</div>
+	{/each}
 </div>

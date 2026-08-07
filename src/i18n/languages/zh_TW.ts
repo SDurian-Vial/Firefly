@@ -383,9 +383,7 @@ export const zh_TW: Translation = {
 
 	// 節氣元件
 	[Key.solarTerm]: "節氣",
-	[Key.solarTermCurrent]: "當前節氣",
-	[Key.solarTermNext]: "下個節氣",
-	[Key.solarTermDays]: "距離 {name} 還有 {days} 天",
+	[Key.solarTermDaysCount]: "{days} 天",
 
 	[Key.shareArticle]: "分享",
 	[Key.generatingPoster]: "海報生成中...",

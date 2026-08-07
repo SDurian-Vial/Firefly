@@ -392,9 +392,7 @@ export const ru: Translation = {
 
 	// Компонент солнечных терминов
 	[Key.solarTerm]: "Солнечные термины",
-	[Key.solarTermCurrent]: "Текущий термин",
-	[Key.solarTermNext]: "Следующий термин",
-	[Key.solarTermDays]: "{days} дн. до {name}",
+	[Key.solarTermDaysCount]: "{days} дн.",
 
 	[Key.shareArticle]: "Поделиться",
 	[Key.generatingPoster]: "Создание постера...",

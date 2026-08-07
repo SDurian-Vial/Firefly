@@ -388,9 +388,7 @@ export const ko: Translation = {
 
 	// 절기 위젯
 	[Key.solarTerm]: "절기",
-	[Key.solarTermCurrent]: "현재 절기",
-	[Key.solarTermNext]: "다음 절기",
-	[Key.solarTermDays]: "{name}까지 {days}일",
+	[Key.solarTermDaysCount]: "{days}일",
 
 	[Key.shareArticle]: "공유",
 	[Key.generatingPoster]: "포스터 생성 중...",

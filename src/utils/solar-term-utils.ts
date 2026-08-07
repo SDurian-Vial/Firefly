@@ -1,13 +1,17 @@
 export interface SolarTermDate {
 	name: string;
+	year: number;
 	month: number;
 	day: number;
 }
 
+export interface UpcomingSolarTerm extends SolarTermDate {
+	daysUntil: number;
+}
+
 export interface SolarTermInfo {
 	current: SolarTermDate;
-	next: SolarTermDate;
-	daysUntil: number;
+	upcoming: UpcomingSolarTerm[];
 }
 
 // 二十四节气中文名称（顺序：小寒为每年第一个节气，对应数组下标 0，冬至为下标 23）
@@ -61,6 +65,7 @@ export function getTermDate(year: number, index: number): SolarTermDate {
 	const date = new Date(offset + Date.UTC(1900, 0, 6, 2, 5));
 	return {
 		name: SOLAR_TERMS[index],
+		year,
 		month: getTermMonth(index),
 		day: date.getUTCDate(),
 	};
@@ -71,12 +76,19 @@ export function getSolarTermsOfYear(year: number): SolarTermDate[] {
 	return SOLAR_TERMS.map((_, index) => getTermDate(year, index));
 }
 
-// 当前节气信息：当前所处节气、下个节气名称、距离下个节气还有多少天
-export function getSolarTermInfo(today: Date): SolarTermInfo {
+// 当前节气信息：当前所处节气、接下来若干个节气及其剩余天数
+export function getSolarTermInfo(today: Date, count = 3): SolarTermInfo {
 	const year = today.getFullYear();
 	const prevYear = getSolarTermsOfYear(year - 1);
 	const thisYear = getSolarTermsOfYear(year);
 	const nextYear = getSolarTermsOfYear(year + 1);
+
+	// 拼接含边界年份的节气序列：上一年冬至 + 今年全年 + 明年头几个节气
+	const entries: SolarTermDate[] = [
+		prevYear[23],
+		...thisYear,
+		...nextYear.slice(0, Math.max(count, 1)),
+	];
 
 	const todayStart = new Date(
 		today.getFullYear(),
@@ -85,35 +97,23 @@ export function getSolarTermInfo(today: Date): SolarTermInfo {
 	).getTime();
 
 	let currentIndex = -1;
-	for (let i = 0; i < thisYear.length; i++) {
-		const term = thisYear[i];
-		const termTime = new Date(year, term.month - 1, term.day).getTime();
+	entries.forEach((term, index) => {
+		const termTime = new Date(term.year, term.month - 1, term.day).getTime();
 		if (todayStart >= termTime) {
-			currentIndex = i;
+			currentIndex = index;
 		}
-	}
+	});
 
-	let current: SolarTermDate;
-	let next: SolarTermDate;
-	let nextTime: number;
+	const current = entries[currentIndex];
+	const upcoming = entries
+		.slice(currentIndex + 1, currentIndex + 1 + count)
+		.map((term) => ({
+			...term,
+			daysUntil: Math.round(
+				(new Date(term.year, term.month - 1, term.day).getTime() - todayStart) /
+					86400000,
+			),
+		}));
 
-	if (currentIndex === -1) {
-		// 当年第一个节气（小寒）还没到，当前处于上一年冬至
-		current = prevYear[23];
-		next = thisYear[0];
-		nextTime = new Date(year, next.month - 1, next.day).getTime();
-	} else if (currentIndex === thisYear.length - 1) {
-		// 已过当年最后一个节气（冬至），下一个是次年小寒
-		current = thisYear[currentIndex];
-		next = nextYear[0];
-		nextTime = new Date(year + 1, next.month - 1, next.day).getTime();
-	} else {
-		current = thisYear[currentIndex];
-		next = thisYear[currentIndex + 1];
-		nextTime = new Date(year, next.month - 1, next.day).getTime();
-	}
-
-	const daysUntil = Math.round((nextTime - todayStart) / 86400000);
-
-	return { current, next, daysUntil };
+	return { current, upcoming };
 }

@@ -381,9 +381,7 @@ export const zh_CN: Translation = {
 
 	// 节气组件
 	[Key.solarTerm]: "节气",
-	[Key.solarTermCurrent]: "当前节气",
-	[Key.solarTermNext]: "下个节气",
-	[Key.solarTermDays]: "距离 {name} 还有 {days} 天",
+	[Key.solarTermDaysCount]: "{days} 天",
 
 	[Key.shareArticle]: "分享",
 	[Key.generatingPoster]: "海报生成中...",

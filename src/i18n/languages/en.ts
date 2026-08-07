@@ -390,9 +390,7 @@ export const en: Translation = {
 
 	// Solar Term Component
 	[Key.solarTerm]: "Solar Terms",
-	[Key.solarTermCurrent]: "Current Term",
-	[Key.solarTermNext]: "Next Term",
-	[Key.solarTermDays]: "{days} days until {name}",
+	[Key.solarTermDaysCount]: "{days} days",
 
 	[Key.shareArticle]: "Share",
 	[Key.generatingPoster]: "Generating Poster...",
