@@ -85,6 +85,7 @@ Firefly 项目中所有可复用组件的集中管理。组件按照功能和职
 - `SidebarTOC.astro` - 侧边栏目录组件
 - `SiteInfo.astro` - 站点信息组件
 - `SiteStats.astro` - 站点统计组件
+- `SolarTerm.astro` / `SolarTerm.svelte` - 节气信息组件（显示当前节气及距离下个节气的天数）
 - `SpineModel.astro` - Spine 看板娘组件
 - `Tags.astro` - 标签组件
 

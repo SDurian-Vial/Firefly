@@ -381,6 +381,12 @@ export const zh_TW: Translation = {
 	[Key.calendarHeatmapWeek]: "{month}月第{week}週，{count}篇文章",
 	[Key.advertisement]: "廣告",
 
+	// 節氣元件
+	[Key.solarTerm]: "節氣",
+	[Key.solarTermCurrent]: "當前節氣",
+	[Key.solarTermNext]: "下個節氣",
+	[Key.solarTermDays]: "距離 {name} 還有 {days} 天",
+
 	[Key.shareArticle]: "分享",
 	[Key.generatingPoster]: "海報生成中...",
 	[Key.copied]: "已複製",

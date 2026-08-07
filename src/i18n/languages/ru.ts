@@ -390,6 +390,12 @@ export const ru: Translation = {
 	[Key.calendarHeatmapWeek]: "Неделя {week} {month}, {count} записей",
 	[Key.advertisement]: "Реклама",
 
+	// Компонент солнечных терминов
+	[Key.solarTerm]: "Солнечные термины",
+	[Key.solarTermCurrent]: "Текущий термин",
+	[Key.solarTermNext]: "Следующий термин",
+	[Key.solarTermDays]: "{days} дн. до {name}",
+
 	[Key.shareArticle]: "Поделиться",
 	[Key.generatingPoster]: "Создание постера...",
 	[Key.copied]: "Скопировано",

@@ -386,6 +386,12 @@ export const ko: Translation = {
 	[Key.calendarHeatmapWeek]: "{month}의 {week}주차, 게시글 {count}개",
 	[Key.advertisement]: "광고",
 
+	// 절기 위젯
+	[Key.solarTerm]: "절기",
+	[Key.solarTermCurrent]: "현재 절기",
+	[Key.solarTermNext]: "다음 절기",
+	[Key.solarTermDays]: "{name}까지 {days}일",
+
 	[Key.shareArticle]: "공유",
 	[Key.generatingPoster]: "포스터 생성 중...",
 	[Key.copied]: "복사됨",

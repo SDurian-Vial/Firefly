@@ -377,6 +377,12 @@ enum I18nKey {
 	calendarHeatmapWeek = "calendarHeatmapWeek",
 	advertisement = "advertisement",
 
+	// 节气组件
+	solarTerm = "solarTerm",
+	solarTermCurrent = "solarTermCurrent",
+	solarTermNext = "solarTermNext",
+	solarTermDays = "solarTermDays",
+
 	shareArticle = "shareArticle",
 	generatingPoster = "generatingPoster",
 	copied = "copied",

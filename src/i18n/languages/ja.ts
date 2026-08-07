@@ -387,6 +387,12 @@ export const ja: Translation = {
 	[Key.calendarHeatmapWeek]: "{month}月第{week}週、{count}記事",
 	[Key.advertisement]: "広告",
 
+	// 二十四節気ウィジェット
+	[Key.solarTerm]: "二十四節気",
+	[Key.solarTermCurrent]: "現在の節気",
+	[Key.solarTermNext]: "次の節気",
+	[Key.solarTermDays]: "{name}まであと{days}日",
+
 	[Key.shareArticle]: "共有",
 	[Key.generatingPoster]: "ポスター生成中...",
 	[Key.copied]: "コピーしました",

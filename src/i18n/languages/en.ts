@@ -388,6 +388,12 @@ export const en: Translation = {
 	[Key.calendarHeatmapWeek]: "Week {week} of {month}, {count} posts",
 	[Key.advertisement]: "Advertisement",
 
+	// Solar Term Component
+	[Key.solarTerm]: "Solar Terms",
+	[Key.solarTermCurrent]: "Current Term",
+	[Key.solarTermNext]: "Next Term",
+	[Key.solarTermDays]: "{days} days until {name}",
+
 	[Key.shareArticle]: "Share",
 	[Key.generatingPoster]: "Generating Poster...",
 	[Key.copied]: "Copied",
